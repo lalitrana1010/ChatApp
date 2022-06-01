@@ -1,0 +1,356 @@
+.container {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow: hidden;
+}
+
+.listOfUsers {
+    width: 30%;
+    height: 100%;
+    overflow-x: hidden;
+    border-right: 1px solid #ccc;
+    background: #eee;
+}
+.messageSections > div:last-child {
+    margin-bottom: 50px;
+}
+.SrchHedSec {
+    background: #fff;
+    padding: 10px;
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.onHover {
+    display: none;
+    transition: .2s;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    width: 100%;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.messageStyle:hover .onHover {
+    display: flex;
+}
+
+.srchInpt input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #eee;
+    border: 0px;
+    border-radius: 4px;
+}
+
+.SrchHedSec h3 {
+    width: auto;
+    float: left;
+}
+
+.srchInpt {
+    width: 100%;
+    float: left;
+    background: #fff;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.SrchHedSec button {
+    width: auto;
+    float: right;
+    background: #096DD9;
+    color: #fff;
+    padding: 6px;
+    border: none;
+    border-radius: 3px;
+}
+
+.chatArea {
+    width: 70%;
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.chatHeader {
+    position: fixed;
+    width: 70%;
+    height: 40px;
+    background: #e2e0e0;
+    text-align: center;
+    line-height: 40px;
+    color: #000;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.chatControls {
+    display: flex;
+    position: absolute;
+    width: 80%;
+    height: auto;
+    bottom: 0;
+    flex-direction: column;
+    margin: 0 0 20px;
+}
+
+.chatControls input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0 0 10px;
+    border-color: #ddd;
+}
+
+.chatControls button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.chatControls button i {
+    font-size: 20px;
+
+}
+
+
+
+ul.toTabs li span.userName {
+    margin: 0;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+}
+
+ul.toTabs {
+    display: flex;
+}
+
+.footIcon span {
+    font-size: 18px;
+    margin-right: 20px;
+    color: #aaa;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+ul.toTabs {
+    align-items: center;
+    font-weight: 500;
+}
+
+ul.toTabs li {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+.displayName {
+    display: flex;
+    padding: 10px 10px 10px 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 100%;
+    background: #fff;
+    margin: 0;
+    position: relative;
+    margin-bottom: 10px;
+}
+li .displayName {
+    margin-bottom: 0px;
+}
+
+span.timeingMsg {
+    position: absolute;
+    right: 0;
+    top: 3px;
+    width: 50%;
+    text-align: right;
+}
+
+.chatControls>div {
+    DISPLAY: FLEX;
+    justify-content: space-between;
+}
+
+.displayName.active {
+    background: #ccc;
+}
+
+.displayName .displayPic {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.displayName .displayPic img {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+.messageStyle {
+    background: skyblue;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 5px;
+    display: inline-block;
+    font-size: 14px;
+    text-align: left;
+    position: relative;
+}
+
+.onHover>button {
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.srchInpt input:focus {
+    outline: none;
+}
+
+.SrchHedSec h3 i {
+    color: #aaa;
+    margin-left: 5px;
+}
+
+.SrchHedSec button i {
+    margin-right: 5px;
+}
+
+.messageSections {
+    height: calc(100% - 90px);
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
+    top: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+}
+.onlineStatus {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #16e316;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 #16e316;
+    position: absolute;
+    bottom: 0;
+    right: -1px;
+    border: 2px solid #fff;
+}
+
+.Userclient {
+    padding: 0 0 0 15px;
+    width: 100%;
+    position: relative;
+}
+
+.onlineStatus.off {
+    background: green;
+    box-shadow: 0 0 0 0;
+}
+
+.Userclient span {
+    width: 100%;
+    float: left;
+    font-size: 13px;
+    color: #B5B5B5;
+}
+
+.Userclient .userName {
+    width: 100%;
+    float: left;
+    font-size: 15px;
+    color: #000;
+    margin: 0 0 5px;
+}
+
+.chatSection {
+    width: 80%;
+    float: left;
+    padding: 40px 10% 20px;
+    height: calc(100% - 120px);
+    background: #eee;
+}
+
+.messageStyle .timemsg {
+    width: 100%;
+    float: left;
+    font-size: 11px;
+    margin: 0 0 1px;
+}
+
+.messageStyle {
+    margin-right: 30px;
+    position: relative;
+}
+
+i.fa.fa-check {
+    position: absolute;
+    right: -25px;
+    height: 16px;
+    width: 16px;
+    background: #eee;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #bbb;
+    top: 15px;
+    border: 1px solid;
+}
+
+li.active {
+    position: relative;
+}
+
+li.active:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #1a5ff9;
+    bottom: -25px;
+}
+
+p.messageStyle i.starMain {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: #1a5ff9;
+}
+
+
+i.fa.fa-times {
+    padding: 9px;
+    cursor: pointer;
+}
+
+.srchInpt i {
+    position: absolute;
+    right: 10px;
+    color: #aaa;
+}

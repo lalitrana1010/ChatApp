@@ -1,0 +1,6 @@
+export const userConstants = {
+    ADD_USERS:'ADD_USERS',
+    ADD_MESSAGE: 'ADD_MESSAGE',
+    DELETE_MESSAGE: 'DELETE_MESSAGE',
+    UPDATE_MESSAGE:'UPDATE_MESSAGE'
+}
