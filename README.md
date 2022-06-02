@@ -17,7 +17,11 @@ npm start
 1. Components :-
 where small build block functions are defined. Like header, layout.
 2. Containers :-
-Our application has single route and page i.e chatPage.
+Our application has single route and page i.e chatPage. Further divided into 3 sections
+  user.js > user ui
+  message > message ui
+  index.js> utilize user and message component
+
 
 3. For state management of whole App I have used redux with middleware redux-thunk.
 Redux Folders are divided as following :-
@@ -36,4 +40,3 @@ https://smartercodes-chatapp.herokuapp.com/
 
  here is the loom link as functionality of the App.
  https://www.loom.com/share/4b742f6c5057499abb9a679102a6e8ce
-
