@@ -13,9 +13,7 @@
     border-right: 1px solid #ccc;
     background: #eee;
 }
-.messageSections > div:last-child {
-    margin-bottom: 50px;
-}
+
 .SrchHedSec {
     background: #fff;
     padding: 10px;
@@ -240,13 +238,11 @@ span.timeingMsg {
 .messageSections {
     height: calc(100% - 90px);
     width: 100%;
-    overflow-x: auto;
-    position: relative;
-    top: 40px;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 .onlineStatus {
     display: inline-block;

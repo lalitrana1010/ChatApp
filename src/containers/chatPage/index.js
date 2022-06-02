@@ -3,28 +3,9 @@ import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUsers, addMessage, deleteMessage, updateMessage, } from '../../actions';
 import Layout from '../../components/Layout';
-import { timeFunction, timeHumanizeFunction, firstLetterCapital ,trimLength} from '../../helperfunctions';
-
-const User = (props) => {
-	const { user, onClick, lastMessage, part } = props;
-
-	const message = lastMessage && lastMessage.find(item => item.uid === user.uid)
-
-	return (
-		<div onClick={() => onClick(user)} className="displayName">
-			<div className="displayPic">
-				<img src="https://i.pinimg.com/originals/be/ac/96/beac96b8e13d2198fd4bb1d5ef56cdcf.jpg" alt="" />
-				<span className={user.isOnline ? `onlineStatus` : `onlineStatus off`} />
-			</div>
-
-			<div className='Userclient'>
-				<span className='userName'>{user.userName}</span>
-				{part && <><span>{message ? trimLength(message.text) : "Start a new chat..."}</span>
-					<span className='timeingMsg'>{message ? timeHumanizeFunction(message.time) : null}</span></>}
-			</div>
-		</div>
-	);
-};
+import User from './user';
+import Message from './message';
+import { timeFunction, firstLetterCapital} from '../../helperfunctions';
 
 const ChatPage = (props) => {
 	const dispatch = useDispatch();
@@ -114,48 +95,18 @@ const ChatPage = (props) => {
 
 						<div className="messageSections">
 							{
-								chatStarted ? starTab ? user.conversations.map((con, index) => {
-									if ((con.uid === userUid) && con.starMark) {
-										return <div style={{ textAlign: 'right' }} key={index}>
-
-											<p className="messageStyle" >{con.starMark && <i className="starMain fa fa-star" aria-hidden="true"></i>}<span className='timemsg'>{timeFunction(con.time)}</span> {con.text}
-												<div className='onHover'>
-													<button onClick={() => { starText(con, index) }}>
-														<i className="fa fa-star" aria-hidden="true"></i>
-													</button>
-													<button onClick={() => { deleteText(index) }}>
-														<i className="fa fa-trash" aria-hidden="true"></i>
-													</button>
-													<button><i className="fa fa-share" aria-hidden="true"></i></button>
-												</div>
-
-											</p>
-
-										</div>
-
+								chatStarted ? starTab ? user.conversations.map((currentMsg, index) => {
+									if ((currentMsg.uid === userUid) && currentMsg.starMark) {
+										return <Message message={currentMsg} starText ={starText} deleteText={deleteText} index={index} key={index}/>
 									}
-								}) :
-									user.conversations.map((con, index) => {
-										if (con.uid === userUid) {
-											return <div style={{ textAlign: 'right' }} key={index}>
-												<p className="messageStyle" >{con.starMark && <i className="starMain fa fa-star" aria-hidden="true"></i>}<span className='timemsg'>{timeFunction(con.time)}</span> {con.text}
-													<div className='onHover'>
-														<button onClick={() => { starText(con, index) }}>
-															<i className={con.starMark ? "fa fa-star" : "fa fa-star-o"} aria-hidden="true"></i>
-														</button>
-														<button onClick={() => { deleteText(index) }}>
-															<i className="fa fa-trash-o" aria-hidden="true"></i>
-														</button>
-														<button><i className="fa fa-share" aria-hidden="true"></i></button>
-													</div>
-													<i class="fa fa-check" aria-hidden="true"></i>
-												</p>
-											</div>
+								}).reverse() :
+									user.conversations.map((currentMsg, index) => {
+										if (currentMsg.uid === userUid) {
+											return <Message message={currentMsg} starText ={starText} deleteText={deleteText} index={index} key={index}/>
 										}
-									})
+									}).reverse()
 									: null
 							}
-
 
 						</div>
 						{
